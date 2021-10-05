@@ -4,3 +4,8 @@
 main{
     background-color: rgb(255, 255, 255);
 }
+
+.quadrado{
+    padding: 40px;
+    margin-bottom: 10px;
+}
