@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>GamersBank - Extrato</title>
+    <title>GamersBank - Transferência</title>
 
-    <script src="resources/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../resources/js/jquery/jquery-3.4.1.min.js"></script>
 
-    <link href="resources/css/styles.css" rel="stylesheet" />
-    <link href="resources/css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="resources/css/estilo.css" rel="stylesheet">
-    <script src="resources/js/font-awesome/all.min.js"></script>
+    <link href="../resources/css/styles.css" rel="stylesheet" />
+    <link href="../resources/css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="../resources/css/estilo.css" rel="stylesheet">
+    <script src="../resources/js/font-awesome/all.min.js"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -63,7 +63,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Menu</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="../index.html">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-tachometer-alt"></i>
                             </div>
@@ -84,25 +84,25 @@
                         <div class="collapse" id="collapseUsers" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="game/game-list.html">Cartão de Crédito</a>
+                                <a class="nav-link" href="../game/game-list.html">Cartão de Crédito</a>
                             </nav>
                         </div>
                         <div class="collapse" id="collapseUsers" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="game/game-beneficio.html">Benefícios</a>
+                                <a class="nav-link" href="../game/game-beneficio.html">Benefícios</a>
                             </nav>
                         </div>
                         <div class="collapse" id="collapseUsers" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="game/game-pix.html">Pix</a>
+                                <a class="nav-link" href="../game/game-pix.html">Pix</a>
                             </nav>
                         </div>
                         <div class="collapse" id="collapseUsers" aria-labelledby="headingOne"
                         data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="game/game-suporte.html">Suporte</a>
+                            <a class="nav-link" href="../game/game-suporte.html">Suporte</a>
                         </nav>
                     </div>
                     </div>
@@ -119,54 +119,39 @@
                 <div class="container-fluid">
                     <div class="row mb-4">
                         <div class="col-md-2">
-                            <img style="width: 200px;" src="resources/assets/img/sasuke.jpg" class="img-thumbnail">
+                            <img style="width: 200px;" src="../resources/assets/img/sasuke.jpg" class="img-thumbnail">
                         </div>
 
                         <div class="col-md-10">
-                            <h1 class="mt-4">Ver Extrato</h1>
+                            <h1 class="mt-4">Transferir</h1>
                             <h3>Saldo: R$ 100,00</h3>
                         </div>
 
                     </div>
 
                     <div class="row">
-                        
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5> 20/03/2021 <span style="color: red;">-R$100,00</span></h5>
-                                  <p>Compra Kabum</p>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <form class="row g-2">
+                                <div class="col-5">
+                                  <label for="inputEmail4" class="form-label">Transferir para outra conta bancária</label>
+                                  <input type="email" class="form-control" id="inputEmail4" placeholder="ex: 12345">
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5> 20/03/2021 <span style="color: green;">+R$100,00</span></h5>
-                                  <p>Transferência recebida 12324</p>
+                                <div class="col-5">
+                                  <label for="inputAddress" class="form-label">Valor em Real</label>
+                                  <input type="text" class="form-control" id="inputAddress" placeholder="ex: 250">
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5> 20/03/2021 <span style="color: red;">-R$100,00</span></h5>
-                                  <p>Transferência enviada 12365</p>
+                                <div class="col-5">
+                                  <label for="inputAddress2" class="form-label">Descrição</label>
+                                  <input type="text" class="form-control" id="inputAddress2" placeholder="pagamento pizza aquele dia">
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5> 20/03/2021 <span style="color: green;">+R$100,00</span></h5>
-                                  <p>Transferência recebida 12324</p>
+                                <div class="col-12">
+                                  <button type="submit" class="btn btn-primary">Cancelar</button>
+                                  <button type="submit" class="btn btn-primary text-right">Transferir</button>
                                 </div>
-                            </div>
+                              </form>
                         </div>
-        
+                        <div class="col-md-3"></div>
                     </div>
                 </div>
             </main>
@@ -185,12 +170,12 @@
         </div>
     </div>
 
-    <script src="resources/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="resources/js/scripts.js"></script>
+    <script src="../resources/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../resources/js/scripts.js"></script>
 
-    <script src="resources/js/datatable/jquery.dataTables.min.js"></script>
-    <script src="resources/js/datatable/dataTables.bootstrap4.min.js"></script>
-    <script src="resources/assets/demo/datatables-init.js"></script>
+    <script src="../resources/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="../resources/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="../resources/assets/demo/datatables-init.js"></script>
 </body>
 
 </html>
