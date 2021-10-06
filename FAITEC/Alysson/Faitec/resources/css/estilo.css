@@ -15,10 +15,6 @@ main{
 }
 
 
-@card-color: #3BF;
-@gradient-factor: .5;
-
-
 .sleeve {
   flex: 1 1 0;
   margin: auto;
@@ -28,37 +24,37 @@ main{
   margin: 20px;
   display: flex;
   flex-shrink: 0;
-  background: @card-color;
   position: relative;
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,.5), inset 1px 1px 0 rgba(255,255,255,.3);
+  background-color: rgb(32 32 32);
   width: 337px;
   height: 212px;
-  opacity: .5;
+}
   
   * {
     position: relative;
   }
   
-  &.selected {
+  .selected {
     transform: scale(1.1);
     z-index: 2;
     opacity: 1;
     box-shadow: 0 2px 10px rgba(0,0,0,.5), 0 10px 50px 5px rgba(0,0,0,.25), inset 1px 1px 0 rgba(255,255,255,.3);
+    background-color: rgb(32 32 32);
   
   }
   
   
-  &:before {
+  :before {
     content: '';
     border-radius: inherit;
     position: absolute;
     display: block;
     top: 0;left: 0;bottom: 0;right: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,@gradient-factor) 0%, rgba(0,0,0,@gradient-factor) 100%);
   }
-}
+
 
 .card-type, .card-company {
   text-align: right;
@@ -72,8 +68,8 @@ main{
   box-shadow:  inset 1px 0 0 rgba(255,255,255,.3);
   font-weight: normal;
   padding: 10px;
-  background: #C32;
-  color: #FB0;
+  background: rgb(255, 255, 255);
+  color: rgb(32 32 32);
   letter-spacing: 1px;
   text-align: center;
   margin: 15px 0;
@@ -106,7 +102,7 @@ main{
     font-size: 12px;
     font-family: sans-serif;
     color: #000;
-    color: rgba(0,0,40,.5);
+    color: rgb(255, 255, 255);
     text-shadow: none;
     margin: 3px;
     margin-left: 10px;
