@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>GamersBank - Guardar Dinheiro</title>
+    <title>GamersBank - Empréstimo</title>
 
     <script src="../resources/js/jquery/jquery-3.4.1.min.js"></script>
 
@@ -84,25 +84,25 @@
                         <div class="collapse" id="collapseUsers" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="game/game-list.html">Cartão de Crédito</a>
+                                <a class="nav-link" href="../game/game-list.html">Cartão de Crédito</a>
                             </nav>
                         </div>
                         <div class="collapse" id="collapseUsers" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="game/game-beneficio.html">Benefícios</a>
+                                <a class="nav-link" href="../game/game-beneficio.html">Benefícios</a>
                             </nav>
                         </div>
                         <div class="collapse" id="collapseUsers" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="game/game-pix.html">Pix</a>
+                                <a class="nav-link" href="../game/game-pix.html">Pix</a>
                             </nav>
                         </div>
                         <div class="collapse" id="collapseUsers" aria-labelledby="headingOne"
                         data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="game/game-suporte.html">Suporte</a>
+                            <a class="nav-link" href="../game/game-suporte.html">Suporte</a>
                         </nav>
                     </div>
                     </div>
@@ -123,51 +123,35 @@
                         </div>
 
                         <div class="col-md-10">
-                            <h1 class="mt-4">Guardar Dinheiro</h1>
+                            <h1 class="mt-4">Transferir</h1>
                             <h3>Saldo: R$ 100,00</h3>
                         </div>
 
                     </div>
 
                     <div class="row">
-                        
-                        <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col">Categoria</th>
-                                <th scope="col">Valor</th>
-                                <th scope="col">Guardar</th>
-                                <th scope="col">Resgatar</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>Viagem</td>
-                                <td>R$ 200,00</td>
-                                <td><button type="button" class="btn btn-success"><i class="fas fa-piggy-bank"></i> Guardar</button></td>
-                                <td><button type="button" class="btn btn-success"><i class="fas fa-hand-holding-usd"></i> Resgatar</button></td>
-                              </tr>
-                              <tr>
-                                <td>PC</td>
-                                <td>R$ 20.000,00</td>
-                                <td><button type="button" class="btn btn-success"><i class="fas fa-piggy-bank"></i> Guardar</button></td>
-                                <td><button type="button" class="btn btn-success"><i class="fas fa-hand-holding-usd"></i> Resgatar</button></td>
-                              </tr>
-                              <tr>
-                                <td>Carro</td>
-                                <td>R$ 2000,00</td>
-                                <td><button type="button" class="btn btn-success"><i class="fas fa-piggy-bank"></i> Guardar</button></td>
-                                <td><button type="button" class="btn btn-success"><i class="fas fa-hand-holding-usd"></i> Resgatar</button></td>
-                              </tr>
-                              <tr>
-                                <td><button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Nova Categoria</button></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                              </tr>
-                            </tbody>
-                          </table>
-        
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <form class="row g-2">
+                                <div class="col-5">
+                                  <label for="inputEmail4" class="form-label">Transferir para outra conta bancária</label>
+                                  <input type="email" class="form-control" id="inputEmail4" placeholder="ex: 12345">
+                                </div>
+                                <div class="col-5">
+                                  <label for="inputAddress" class="form-label">Valor em Real</label>
+                                  <input type="text" class="form-control" id="inputAddress" placeholder="ex: 250">
+                                </div>
+                                <div class="col-5">
+                                  <label for="inputAddress2" class="form-label">Descrição</label>
+                                  <input type="text" class="form-control" id="inputAddress2" placeholder="pagamento pizza aquele dia">
+                                </div>
+                                <div class="col-12">
+                                  <button type="submit" class="btn btn-primary">Cancelar</button>
+                                  <button type="submit" class="btn btn-primary text-right">Transferir</button>
+                                </div>
+                              </form>
+                        </div>
+                        <div class="col-md-3"></div>
                     </div>
                 </div>
             </main>
