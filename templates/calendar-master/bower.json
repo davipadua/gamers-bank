@@ -1,0 +1,23 @@
+{
+  "name": "events_calendar",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ilhavalley/calendar",
+  "authors": [
+    "clayton@xdevel.com.br <clayton@xdevel.com.br>"
+  ],
+  "description": "events calendar",
+  "main": "index.html",
+  "license": "GPLV3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-calendar": "~1.0.0",
+    "angular-bootstrap": "~0.13.0",
+    "bootstrap": "~3.3.4"
+  }
+}
