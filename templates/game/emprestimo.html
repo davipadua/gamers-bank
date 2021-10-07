@@ -13,8 +13,11 @@
 
     <link href="../resources/css/styles.css" rel="stylesheet" />
     <link href="../resources/css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="../resources/css/estilo.css" rel="stylesheet">
+    <!-- <link href="../resources/css/estilo.css" rel="stylesheet"> -->
     <script src="../resources/js/font-awesome/all.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -139,60 +142,68 @@
                                   <label for="inputEmail4" class="form-label">De quanto você precisa R$ ? </label>
                                   <input type="number" min="30000" step="0.01" max="5000000" class="form-control" id="inputEmail4" placeholder="ex: R$50.000,00">
                                 </div>
+                    
                                 <div class="col-5">
                                     <div class="form-group">
                                         <label class="small mb-1" for="exampleFormControlSelect1">Escolha o número de parcelas que deseja pagar</label> <select class="form-control small mb-1"
                                             id="exampleFormControlSelect1">
                                             <option>Escolha...</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
-                                            <option>11</option>
-                                            <option>12</option>
-                                            <option>13</option>
-                                            <option>14</option>
-                                            <option>15</option>
-                                            <option>16</option>
-                                            <option>17</option>
-                                            <option>18</option>
-                                            <option>19</option>
-                                            <option>20</option>
-                                            <option>21</option>
-                                            <option>22</option>
-                                            <option>23</option>
-                                            <option>24</option>
-                                            <option>25</option>
-                                            <option>26</option>
-                                            <option>27</option>
-                                            <option>28</option>
-                                            <option>29</option>
-                                            <option>30</option>
-                                            <option>31</option>
-                                            <option>32</option>
-                                            <option>33</option>
-                                            <option>34</option>
-                                            <option>35</option>
-                                            <option>36</option>
+                                            <option>1x</option>
+                                            <option>2x</option>
+                                            <option>3x</option>
+                                            <option>4x</option>
+                                            <option>5x</option>
+                                            <option>6x</option>
+                                            <option>7x</option>
+                                            <option>8x</option>
+                                            <option>9x</option>
+                                            <option>10x</option>
+                                            <option>11x</option>
+                                            <option>12x</option>
+                                            <option>13x</option>
+                                            <option>14x</option>
+                                            <option>15x</option>
+                                            <option>16x</option>
+                                            <option>17x</option>
+                                            <option>18x</option>
+                                            <option>19x</option>
+                                            <option>20x</option>
+                                            <option>21x</option>
+                                            <option>22x</option>
+                                            <option>23x</option>
+                                            <option>24x</option>
+                                            <option>25x</option>
+                                            <option>26x</option>
+                                            <option>27x</option>
+                                            <option>28x</option>
+                                            <option>29x</option>
+                                            <option>30x</option>
+                                            <option>31x</option>
+                                            <option>32x</option>
+                                            <option>33x</option>
+                                            <option>34x</option>
+                                            <option>35x</option>
+                                            <option>36x</option>
                                         </select>
                                     </div>
                                   
                                 </div>
                                 <div class="col-5">
                                   <label for="inputAddress2" class="form-label">Escolha a data da primeira parcela</label>
-                                  <input type="date" class="form-control" id="inputAddress2" placeholder="ex: 21/12/2024" >
+                                  <input id="date" type="date" class="form-control"  >
                                   
                                 </div>
+                                <div class="col-5">
+                                    <label for="inputEmail4" class="form-label">Valor a ser pago em R$ </label>
+                                    <input type="number" min="0" step="0.01" max="#" class="form-control" id="inputEmail4" placeholder="ex: R$50.000,00">
+                                  </div>
+                                
                                 <div class="col-12">
-                                  <button type="submit" class="btn btn-primary">Solicitar </button>
+                      
                                   <a type="submit" class="btn btn-primary" href="../account/login.html" ><i ></i> Solicitar</a>
-                                  <button type="submit" class="btn btn-primary text-right">Cancelar</button>
+                                  <a type="submit" class="btn btn-primary" href="../index.html" ><i ></i> Cancelar</a>
+
+                                  
                                 </div>
                               </form>
                         </div>
@@ -221,6 +232,7 @@
     <script src="../resources/js/datatable/jquery.dataTables.min.js"></script>
     <script src="../resources/js/datatable/dataTables.bootstrap4.min.js"></script>
     <script src="../resources/assets/demo/datatables-init.js"></script>
+
 </body>
 
 </html>
