@@ -3,7 +3,7 @@ package br.fai.gb.model;
 public class Conta extends BasePojo {
 
 	private int numero;
-	private double saltoAtual;
+	private double saldoAtual;
 	private double taxaJuros;
 	private Long pessoaId;
 
@@ -15,12 +15,12 @@ public class Conta extends BasePojo {
 		this.numero = numero;
 	}
 
-	public double getSaltoAtual() {
-		return saltoAtual;
+	public double getSaldoAtual() {
+		return saldoAtual;
 	}
 
-	public void setSaltoAtual(final double saltoAtual) {
-		this.saltoAtual = saltoAtual;
+	public void setSaldoAtual(final double saldoAtual) {
+		this.saldoAtual = saldoAtual;
 	}
 
 	public double getTaxaJuros() {
