@@ -1,4 +1,4 @@
-package bf.fai.gb.db.dao.impl;
+package br.fai.gb.db.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,12 +10,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import bf.fai.gb.db.connection.ConnectionFactory;
-import bf.fai.gb.db.dao.PessoaDao;
+import br.fai.gb.db.connection.ConnectionFactory;
+import br.fai.gb.db.dao.PessoaDao;
 import br.fai.gb.model.Pessoa;
 
 @Repository
-public class PessoaImpl implements PessoaDao {
+public class PessoaDaoImpl implements PessoaDao {
 
 	@Override
 	public List<Pessoa> readAll() {

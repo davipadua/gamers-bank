@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import bf.fai.gb.db.dao.PessoaDao;
 import br.fai.gb.api.service.PessoaService;
+import br.fai.gb.db.dao.PessoaDao;
 import br.fai.gb.model.Pessoa;
 
 @Service

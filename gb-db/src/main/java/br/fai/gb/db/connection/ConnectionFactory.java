@@ -1,4 +1,4 @@
-package bf.fai.gb.db.connection;
+package br.fai.gb.db.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

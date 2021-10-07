@@ -1,4 +1,4 @@
-package bf.fai.gb.db.dao;
+package br.fai.gb.db.dao;
 
 import java.util.List;
 
