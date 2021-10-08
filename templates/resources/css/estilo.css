@@ -2,16 +2,21 @@
     color: black !important;
 }
 main{
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255);
 }
 
+
 .quadrado{
+  width: 250px;
     padding: 40px;
     margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+    
 }
 
 .carrousel-imagem{
-    height: 400px;
+    height: 315px;
+    left: 28px;
 }
 
 

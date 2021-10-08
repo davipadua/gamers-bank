@@ -2469,9 +2469,11 @@ fieldset:disabled a.btn {
   border-color: #c72d2d;
 }
 .btn-primary:hover {
-  color: #fff;
-  background-color: #811f1f;
+  color: rgb(0, 0, 0);
+  background-color: #a92727;
   border-color: #c72d2d;
+  transform: scale(105%);
+  box-shadow: 5px 5px 10px rgb(255, 0, 0);
 }
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
@@ -6115,7 +6117,7 @@ button.bg-info:focus {
 }
 
 .bg-warning {
-  background-color: #ffc107 !important;
+  background-color: rgba(112, 112, 112, 0.3) !important;
 }
 
 a.bg-warning:hover, a.bg-warning:focus,
