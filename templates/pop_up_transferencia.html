@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop_Up_Transferencia</title>
+    <style>
+
+        .popup{
+            position: fixed;
+            top: 0;bottom: 0;
+            left: 0;right: 0;
+            margin: auto;
+            width: 300px;
+            height: 80px;
+            padding: 15px;
+            border: solid 1px color white;
+            background: red;
+            display: block;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function abrir(){
+            document.getElementById(`popup`).style.display= `block`;
+
+        }
+        function fechar(){
+            document.getElementById(`popup`).style.display= `none`;
+
+        }
+    </script>
+</head>
+<body>
+
+    <div id="popup" class="popup">
+        <p>
+            Sua solicitação esta sendo processada!!!
+        </p>
+    </div>
+
+    <!--Funções para o PopUp-->
+    <a href="javascript: abrir();">Abrir Pop_Up_Transferencia</a>
+    <a href="javascript: fechar();">Fechar Pop_Up_Transferencia</a>
+    
+
+</body>
+</html>

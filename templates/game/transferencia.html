@@ -15,6 +15,44 @@
     <link href="../resources/css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link href="../resources/css/estilo.css" rel="stylesheet">
     <script src="../resources/js/font-awesome/all.min.js"></script>
+
+    <style>
+
+        .popup{
+            position: fixed;
+            top: 0;bottom: 0;
+            left: 0;right: 0;
+            margin: auto;
+            width: 300px;
+            height: 100px;
+            padding: 15px;
+  
+            background: red;
+            display: none;
+        }
+
+        .botao_fechar{
+            top: -158px;
+
+            right: -20px;
+            margin: auto;
+            width: 30px;
+            height: 10px;
+            padding: 15px;
+
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        function abrir(){
+            document.getElementById(`popup`).style.display= `block`;
+
+        }
+        function fechar(){
+            document.getElementById(`popup`).style.display= `none`;
+
+        }
+    </script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -147,9 +185,22 @@
                                 </div>
                                 <div class="col-12">
                                     <br>
-                                  <button type="submit" class="btn btn-primary">Transferir</button>
-                                  <button type="submit" class="btn btn-primary text-right">Cancelar</button>
+                                    <a type="submit" class="btn btn-primary" href="javascript: abrir();" ><i ></i> Transferir</a>
+                                    
+                                  <a type="submit" class="btn btn-primary" href="../game/transferencia.html" ><i ></i> Cancelar</a>
                                 </div>
+
+                                <div id="popup" class="popup">
+                                    <p>
+                                        Sua solicitação esta sendo processada...
+                                    </p>
+                                </div>
+                                <div id="botao_fechar" class="botao_fechar">
+                                    <a display href="javascript: fechar();">X</a>
+                                </div>
+                                
+                                
+                            
                               </form>
                         </div>
                         <div class="col-md-3"></div>
