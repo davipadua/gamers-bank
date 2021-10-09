@@ -5,13 +5,11 @@ main{
     background-color: rgba(255, 255, 255);
 }
 
-
 .quadrado{
   width: 250px;
     padding: 40px;
     margin-bottom: 10px;
     color: rgb(255, 255, 255);
-    
 }
 
 .carrousel-imagem{
