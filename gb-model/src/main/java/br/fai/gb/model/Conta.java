@@ -1,6 +1,6 @@
 package br.fai.gb.model;
 
-public class Conta extends BasePojo {
+public class Conta extends Pessoa {
 
 	private int numero;
 	private double saldoAtual;

@@ -30,7 +30,9 @@ public class ContaImpl implements ContaDao {
 
 			connection = ConnectionFactory.getConnection();
 
-			final String sql = "SELECT * FROM conta WHERE id = ? AND ;";
+			String sql = "select * from conta";
+			sql += "inner join pessoa on pessoa.id = conta.pessoa_id";
+			sql += "where conta.id = ?;";
 
 			preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setLong(1, id);
@@ -40,11 +42,13 @@ public class ContaImpl implements ContaDao {
 			if (resultSet.next()) {
 
 				conta = new Conta();
-				conta.setId(resultSet.getLong("id"));
-				conta.setNumero(resultSet.getInt("numero"));
-				conta.setSaldoAtual(resultSet.getDouble("saldo_atual"));
-				conta.setTaxaJuros(resultSet.getDouble("taxa_juros"));
-				conta.setPessoaId(resultSet.getLong("pessoa_id"));
+				conta.setId(resultSet.getLong("conta.id"));
+				conta.setNumero(resultSet.getInt("conta.numero"));
+				conta.setSaldoAtual(resultSet.getDouble("conta.saldo_atual"));
+				conta.setTaxaJuros(resultSet.getDouble("conta.taxa_juros"));
+				conta.setPessoaId(resultSet.getLong("conta.pessoa_id"));
+
+				conta.setNome(resultSet.getString("pessoa.nome"));
 
 			}
 
