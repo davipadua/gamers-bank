@@ -5,10 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import br.fai.gb.db.connection.ConnectionFactory;
 import br.fai.gb.db.dao.ContaDao;
 import br.fai.gb.model.Conta;
 
+@Service
 public class ContaImpl implements ContaDao {
 
 	@Override

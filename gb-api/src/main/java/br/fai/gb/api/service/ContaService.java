@@ -10,9 +10,9 @@ public interface ContaService {
 
 	Conta readById(Long id);
 
-	Long create(Conta pessoa);
+	Long create(Conta conta);
 
-	boolean update(Conta pessoa);
+	boolean update(Conta conta);
 
 	boolean delete(Long id);
 
