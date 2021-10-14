@@ -12,7 +12,7 @@ import br.fai.gb.db.dao.ContaDao;
 import br.fai.gb.model.Conta;
 
 @Service
-public class ContaImpl implements ContaDao {
+public class ContaDaoImpl implements ContaDao {
 
 	@Override
 	public List<Conta> readAll() {

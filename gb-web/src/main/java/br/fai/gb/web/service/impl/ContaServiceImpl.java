@@ -5,11 +5,13 @@ import java.util.List;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import br.fai.gb.model.Conta;
 import br.fai.gb.web.service.ContaService;
 
+@Service
 public class ContaServiceImpl implements ContaService {
 
 	@Override

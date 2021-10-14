@@ -3,11 +3,13 @@ package br.fai.gb.api.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.fai.gb.api.service.ContaService;
 import br.fai.gb.db.dao.ContaDao;
 import br.fai.gb.model.Conta;
 
+@Service
 public class ContaServiceImpl implements ContaService {
 
 	@Autowired
