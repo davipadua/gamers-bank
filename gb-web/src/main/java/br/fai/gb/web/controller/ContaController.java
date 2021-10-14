@@ -22,7 +22,7 @@ public class ContaController {
 
 		final Conta conta = contaService.readById(id);
 		model.addAttribute("conta", conta);
-		return "pessoas/detail";
+		return "conta/detail";
 
 	}
 
