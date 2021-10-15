@@ -29,7 +29,7 @@ public class ContaServiceImpl implements ContaService {
 	@Override
 	public Conta readById(final Long id) {
 
-		final String endpoint = "http://localhost:8081/api/v1/conta/read-by-id/" + id;
+		final String endpoint = "http://localhost:8080/api/v1/conta/read-by-id/" + id;
 
 		Conta response = null;
 

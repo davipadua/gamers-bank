@@ -33,9 +33,9 @@ public class ContaDaoImpl implements ContaDao {
 
 			connection = ConnectionFactory.getConnection();
 
-			String sql = "select * from conta";
-			sql += "inner join pessoa on pessoa.id = conta.pessoa_id";
-			sql += "where conta.id = ?;";
+			String sql = "select * from pessoa ";
+			sql += " inner join conta on conta.pessoa_id = pessoa.id ";
+			sql += " where conta.id = ?;";
 
 			preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setLong(1, id);
