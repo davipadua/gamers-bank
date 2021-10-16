@@ -24,8 +24,8 @@
 				</div>
 
 				<div class="col-md-10">
-					<h1 th:text="${conta.taxaJuros}" class="mt-4">Bem vindo, Gamer</h1>
-					<h3>Saldo: R$ 100,00</h3>
+					<h1 th:text="'Bem vindo, ' + ${conta.nome}" class="mt-4">Bem vindo, Gamer</h1>
+					<h3 th:text="'Saldo: R$ ' + ${conta.saldoAtual}">Saldo: R$ 100,00</h3>
 				</div>
 
 			</div>

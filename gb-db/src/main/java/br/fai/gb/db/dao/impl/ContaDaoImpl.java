@@ -47,13 +47,13 @@ public class ContaDaoImpl implements ContaDao {
 			if (resultSet.next()) {
 
 				conta = new Conta();
-				conta.setId(resultSet.getLong("conta.id"));
-				conta.setNumero(resultSet.getInt("conta.numero"));
-				conta.setSaldoAtual(resultSet.getDouble("conta.saldo_atual"));
-				conta.setTaxaJuros(resultSet.getDouble("conta.taxa_juros"));
-				conta.setPessoaId(resultSet.getLong("conta.pessoa_id"));
+				conta.setId(resultSet.getLong("id"));
+				conta.setNumero(resultSet.getInt("numero"));
+				conta.setSaldoAtual(resultSet.getDouble("saldo_atual"));
+				conta.setTaxaJuros(resultSet.getDouble("taxa_juros"));
+				conta.setPessoaId(resultSet.getLong("pessoa_id"));
 
-				conta.setNome(resultSet.getString("pessoa.nome"));
+				conta.setNome(resultSet.getString("nome"));
 
 			}
 
