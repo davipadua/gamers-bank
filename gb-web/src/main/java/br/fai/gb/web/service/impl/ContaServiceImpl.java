@@ -22,8 +22,27 @@ public class ContaServiceImpl implements ContaService {
 
 	@Override
 	public Long create(final Conta conta) {
-		// TODO Auto-generated method stub
-		return null;
+
+		Long id = Long.valueOf(-1);
+
+		final String endpoint = "http://localhost:8080/api/v1/conta/create";
+
+		try {
+
+			final RestTemplate restTemplate = new RestTemplate();
+			final HttpEntity<Conta> httpEntity = new HttpEntity<Conta>(conta);
+
+			final ResponseEntity<Long> responseEntity = restTemplate.exchange(endpoint, HttpMethod.POST, httpEntity,
+					Long.class);
+			id = responseEntity.getBody();
+
+		} catch (final Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+
+		}
+
+		return id;
 	}
 
 	@Override

@@ -28,9 +28,9 @@ public class ContaServiceImpl implements ContaService {
 	}
 
 	@Override
-	public Long create(final Conta pessoa) {
-		// TODO Auto-generated method stub
-		return null;
+	public Long create(final Conta conta) {
+
+		return dao.create(conta);
 	}
 
 	@Override

@@ -3,6 +3,8 @@ package br.fai.gb.db.dao.impl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -64,8 +66,59 @@ public class ContaDaoImpl implements ContaDao {
 
 	@Override
 	public Long create(final Conta entity) {
-		// TODO Auto-generated method stub
-		return null;
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+
+		String sql = " INSERT INTO pessoa ";
+		sql += " (nome, email, cpf, renda) ";
+		sql += " VALUES(?, ?, ?, ?); ";
+		sql += " INSERT INTO conta ";
+		sql += " (numero, saldo_atual, pessoa_id, taxa_juros)";
+		sql += " values(?, ?, ?, ?);";
+
+		Long id = Long.valueOf(-1);
+
+		try {
+			connection = ConnectionFactory.getConnection();
+			connection.setAutoCommit(false);
+
+			preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+			preparedStatement.setString(1, entity.getNome());
+			preparedStatement.setString(2, entity.getEmail());
+			preparedStatement.setString(3, entity.getCpf());
+			preparedStatement.setDouble(4, entity.getRenda());
+
+			preparedStatement.setInt(5, (int) (Math.random() * ((9999 - 1000) + 1)) + 1000);
+			preparedStatement.setDouble(6, 1000);
+			preparedStatement.setLong(7, id);
+			preparedStatement.setLong(8, 0);
+
+			preparedStatement.execute();
+
+			resultSet = preparedStatement.getGeneratedKeys();
+			if (resultSet.next()) {
+				id = resultSet.getLong(1);
+			}
+
+			connection.commit();
+
+		} catch (final Exception e) {
+
+			try {
+				connection.rollback();
+			} catch (final SQLException e1) {
+				System.out.println(e1.getMessage());
+			}
+
+		} finally {
+			ConnectionFactory.close(resultSet, preparedStatement, connection);
+		}
+
+		return id;
+
 	}
 
 	@Override
