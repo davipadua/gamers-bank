@@ -3,13 +3,18 @@ package br.fai.gb.db.dao.impl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Repository;
 
 import br.fai.gb.db.connection.ConnectionFactory;
 import br.fai.gb.db.dao.ExtratoDao;
 import br.fai.gb.model.Extrato;
 
+@Repository
 public class ExtratoDaoImpl implements ExtratoDao {
 
 	@Override
@@ -64,8 +69,50 @@ public class ExtratoDaoImpl implements ExtratoDao {
 
 	@Override
 	public Long create(final Extrato entity) {
-		// TODO Auto-generated method stub
-		return null;
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+
+		String sql = " INSERT INTO extrato ";
+		sql += " (descricao, valor, conta_id) ";
+		sql += " VALUES(?, ?, ?); ";
+
+		Long id = Long.valueOf(-1);
+
+		try {
+			connection = ConnectionFactory.getConnection();
+			connection.setAutoCommit(false);
+
+			preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+			preparedStatement.setString(1, entity.getDescricao());
+			preparedStatement.setDouble(2, entity.getValor());
+			// preparedStatement.setString(3, entity.getData());
+			preparedStatement.setDouble(3, id);
+
+			preparedStatement.execute();
+
+			resultSet = preparedStatement.getGeneratedKeys();
+			if (resultSet.next()) {
+				id = resultSet.getLong(1);
+			}
+
+			connection.commit();
+
+		} catch (final Exception e) {
+
+			try {
+				connection.rollback();
+			} catch (final SQLException e1) {
+				System.out.println(e1.getMessage());
+			}
+
+		} finally {
+			ConnectionFactory.close(resultSet, preparedStatement, connection);
+		}
+
+		return id;
 	}
 
 	@Override
