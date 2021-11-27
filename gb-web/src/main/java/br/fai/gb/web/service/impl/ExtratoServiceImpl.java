@@ -18,7 +18,7 @@ public class ExtratoServiceImpl implements ExtratoService {
 	@Override
 	public List<Extrato> readAll(final Long id) {
 
-		final String endpoint = "http://localhost:8080/api/v1/extrato/read-all/" + id;
+		final String endpoint = "http://localhost:8080/api/v1/extrato/list/" + id;
 
 		List<Extrato> response = null;
 

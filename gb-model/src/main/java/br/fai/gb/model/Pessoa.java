@@ -6,6 +6,7 @@ public class Pessoa extends BasePojo {
 	private String email;
 	private String cpf;
 	private double renda;
+	private String senha;
 
 	public String getNome() {
 		return nome;
@@ -37,6 +38,14 @@ public class Pessoa extends BasePojo {
 
 	public void setRenda(final double renda) {
 		this.renda = renda;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(final String senha) {
+		this.senha = senha;
 	}
 
 }

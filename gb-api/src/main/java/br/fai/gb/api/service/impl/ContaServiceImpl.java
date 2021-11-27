@@ -34,15 +34,27 @@ public class ContaServiceImpl implements ContaService {
 	}
 
 	@Override
-	public boolean update(final Conta pessoa) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean update(final Conta conta) {
+
+		return dao.update(conta);
 	}
 
 	@Override
 	public boolean delete(final Long id) {
-		// TODO Auto-generated method stub
-		return false;
+
+		return dao.delete(id);
+	}
+
+	@Override
+	public boolean transfere(final Conta envia, final Conta recebe) {
+
+		return dao.transfere(envia, recebe);
+	}
+
+	@Override
+	public Conta login(final String email, final String senha) {
+
+		return dao.login(email, senha);
 	}
 
 }

@@ -16,4 +16,8 @@ public interface ContaService {
 
 	boolean delete(Long id);
 
+	boolean transfere(Conta envia, Conta recebe);
+
+	Conta login(String email, String senha);
+
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div layout:fragment="body">
+		<div class="container-fluid">
+			<div class="row mb-4">
+				<div class="col-md-2">
+					<img style="width: 200px;" src="/resources/assets/img/sasuke.jpg"
+						class="img-thumbnail">
+				</div>
+
+				<div class="col-md-10">
+					<h1 class="mt-4">Transferir</h1>
+					<h3 th:text="${'Saldo: R$ ' + conta.saldoAtual}">Saldo: R$ 100,00</h3>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<form class="row g-2">
+						<div class="col-8">
+							<label for="inputEmail4" class="form-label">Transferir
+								para outra conta bancária</label> <input type="email"
+								class="form-control" id="inputEmail4"
+								placeholder="Ex: 1020">
+						</div>
+						<div class="col-8">
+							<label for="inputAddress" class="form-label">Digite o
+								Valor em R$</label> <input type="number" min="0" class="form-control"
+								id="inputAddress" placeholder="">
+						</div>
+						<div class="col-8">
+							<label for="inputAddress2" class="form-label">Descrição :</label>
+							<input type="text" class="form-control" id="inputAddress2"
+								placeholder="Insira uma descrição">
+						</div>
+						<div class="col-12">
+							<br> <a type="submit" class="btn btn-primary"
+								href="javascript: abrir();"><i></i> Transferir</a> <a
+								type="submit" class="btn btn-primary"
+								th:href="@{/conta/detail/{id} (id=${conta.id})}"><i></i> Cancelar</a>
+						</div>
+
+					</form>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

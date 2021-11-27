@@ -71,14 +71,98 @@ public class ContaServiceImpl implements ContaService {
 
 	@Override
 	public boolean update(final Conta conta) {
-		// TODO Auto-generated method stub
-		return false;
+
+		boolean response = false;
+
+		final String endpoint = "http://localhost:8080/api/v1/conta/update";
+
+		try {
+			final RestTemplate restTemplate = new RestTemplate();
+
+			final HttpEntity<Conta> httpEntity = new HttpEntity<Conta>(conta);
+
+			final ResponseEntity<Boolean> responseEntity = restTemplate.exchange(endpoint, HttpMethod.PUT, httpEntity,
+					Boolean.class);
+
+			response = responseEntity.getBody();
+
+		} catch (final Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return response;
 	}
 
 	@Override
 	public boolean deleteById(final Long id) {
-		// TODO Auto-generated method stub
-		return false;
+
+		boolean response = false;
+
+		final String endpoint = "http://localhost:8080/api/v1/conta/delete/" + id;
+
+		try {
+			final RestTemplate restTemplate = new RestTemplate();
+
+			final HttpEntity<String> httpEntity = new HttpEntity<String>("");
+
+			final ResponseEntity<Boolean> requestResponse = restTemplate.exchange(endpoint, HttpMethod.DELETE,
+					httpEntity, Boolean.class);
+
+			response = requestResponse.getBody();
+
+		} catch (final Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return response;
+	}
+
+	@Override
+	public boolean transfere(final Conta envia, final Conta recebe) {
+
+		boolean response = false;
+
+		final String endpoint = "http://localhost:8080/api/v1/conta/transfere";
+
+		try {
+			final RestTemplate restTemplate = new RestTemplate();
+
+			final HttpEntity<Conta> httpEntity = new HttpEntity<Conta>(envia);
+
+			final ResponseEntity<Boolean> responseEntity = restTemplate.exchange(endpoint, HttpMethod.PUT, httpEntity,
+					Boolean.class);
+
+			response = responseEntity.getBody();
+
+		} catch (final Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return response;
+	}
+
+	@Override
+	public Conta login(final Conta conta) {
+
+		Conta response = null;
+
+		final String endpoint = "http://localhost:8080/api/v1/conta/login";
+
+		try {
+			final RestTemplate restTemplate = new RestTemplate();
+
+			final HttpEntity<Conta> httpEntity = new HttpEntity<Conta>(conta);
+
+			final ResponseEntity<Conta> responseEntity = restTemplate.exchange(endpoint, HttpMethod.POST, httpEntity,
+					Conta.class);
+
+			response = responseEntity.getBody();
+
+		} catch (final Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return response;
 	}
 
 }

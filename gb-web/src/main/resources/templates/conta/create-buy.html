@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title></title>
+
+
+<link href="../resources/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div layout:fragment="body">
+		<div class="container-fluid">
+			<div class="row mb-4">
+
+
+				<div class="col-md-10">
+					<h1 class="mt-4">Gamer</h1>
+<!-- 					<h3 >Saldo: R$ 100,00</h3> -->
+				</div>
+
+			</div>
+			<div class="card-body">
+				<form th:action="@{/extrato/create-compra}" method="POST"
+					th:object="${extrato}">
+					<div class="form-row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="small mb-1" for="valorTransferencia">Qual
+									o valor da compra?</label><input required="required"
+									class="form-control py-4" id="valorTransferencia" type="number"
+									placeholder="Insira o valor" th:field="${extrato.valor}" />
+							</div>
+						</div>
+
+					</div>
+					<div class="form-row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="small mb-1" for="pessoaTransferencia">Descrição
+									da compra</label><input required="required" class="form-control py-4"
+									id="pessoaTransferencia" type="text"
+									placeholder="Insira o nome" th:field="${extrato.descricao}" />
+							</div>
+						</div>
+
+					</div>
+					<div class="form-row">
+						<div class="col-md-6">
+							<button class="btn btn-primary" type="submit">Simular
+								compra</button>
+
+						</div>
+
+					</div>
+			</div>
+		</div>
+		</form>
+	</div>
+	</div>
+
+	</div>
+
+
+
+</body>
+</html>

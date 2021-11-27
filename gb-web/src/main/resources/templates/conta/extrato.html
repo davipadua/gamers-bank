@@ -31,59 +31,33 @@
 
 				<div class="col-md-10">
 					<h1 class="mt-4">Ver Extrato</h1>
-					<h3>Saldo: R$ 100,00</h3>
+					<!--  <h3 th:text="${extrato.descricao}">Saldo: R$ 100,00</h3> -->
+					<h3 th:text="${'Saldo: R$ ' + conta.saldoAtual}">Saldo: R$ 100,00</h3>
 				</div>
 
 			</div>
 
 			<div class="row">
 
-				<div class="col-12">
+				<div class="col-12" th:each="extrato : ${extratos}">
 					<div class="card">
 						<div class="card-body">
 							<h5>
-								20/03/2021 <span style="color: red;">-R$100,00</span>
+								20/03/2021 <span style="color: red;" th:text="${extrato.valor}">-R$100,00</span>
 							</h5>
-							<p>Compra Kabum</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-12">
-					<div class="card">
-						<div class="card-body">
-							<h5>
-								20/03/2021 <span style="color: green;">+R$100,00</span>
-							</h5>
-							<p>Transferência recebida 12324</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-12">
-					<div class="card">
-						<div class="card-body">
-							<h5>
-								20/03/2021 <span style="color: red;">-R$100,00</span>
-							</h5>
-							<p>Transferência enviada 12365</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-12">
-					<div class="card">
-						<div class="card-body">
-							<h5>
-								20/03/2021 <span style="color: green;">+R$100,00</span>
-							</h5>
-							<p>Transferência recebida 12324</p>
+							<p th:text="${extrato.descricao}">Compra Kabum</p>
 						</div>
 					</div>
 				</div>
 
 			</div>
 		</div>
+		<a type="submit" class="btn btn-primary"
+			th:href="@{/conta/detail/{id} (id=${conta.id})}"><i></i> Voltar</a> 
+			
+			<a
+			type="submit" class="btn btn-primary"
+			th:href="@{/extrato/{id} (id=${conta.id})}"><i></i> Simular compra</a>
 
 	</div>
 

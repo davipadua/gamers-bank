@@ -16,4 +16,8 @@ public interface ContaService {
 
 	boolean deleteById(Long id);
 
+	boolean transfere(Conta envia, Conta recebe);
+
+	Conta login(Conta conta);
+
 }

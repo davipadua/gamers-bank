@@ -44,7 +44,7 @@ public class ExtratoDaoImpl implements ExtratoDao {
 
 				extrato.setId(resultSet.getLong("id"));
 				extrato.setDescricao(resultSet.getString("descricao"));
-				extrato.setData(resultSet.getTimestamp("data"));
+				extrato.setValor(resultSet.getDouble("valor"));
 				extrato.setContaId(resultSet.getInt("conta_id"));
 
 				extratos.add(extrato);
@@ -88,7 +88,6 @@ public class ExtratoDaoImpl implements ExtratoDao {
 
 			preparedStatement.setString(1, entity.getDescricao());
 			preparedStatement.setDouble(2, entity.getValor());
-			// preparedStatement.setString(3, entity.getData());
 			preparedStatement.setDouble(3, id);
 
 			preparedStatement.execute();

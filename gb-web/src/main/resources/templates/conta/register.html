@@ -1,105 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html layout:decorate="~{layout}">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <title>Crie uma conta</title>
+<title>Crie uma conta</title>
 
-    <script src="../resources/js/jquery/jquery-3.4.1.min.js"></script>
+<script src="../resources/js/jquery/jquery-3.4.1.min.js"></script>
 
-    <link href="../resources/css/styles.css" rel="stylesheet" />
-    <!--<link rel="stylesheet" href="../resources/css/estilo.css">-->
-    <script src="../resources/js/font-awesome/all.min.js"></script>
+<link href="../resources/css/styles.css" rel="stylesheet" />
+<!--<link rel="stylesheet" href="../resources/css/estilo.css">-->
+<script src="../resources/js/font-awesome/all.min.js"></script>
 </head>
 
 <body>
-    <div id="layoutAuthentication">
-        <div id="layoutAuthentication_content">
-            <main>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-7">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">Crie sua conta</h3>
-                                </div>
-                                <div class="card-body">
-                                    <form>
-                                        <div class="form-row">
-                                            <div class="col-md-6">
-                                                <div class="form-group"><label class="small mb-1"
-                                                        for="inputFirstName">Nome</label><input required="required"
-                                                        class="form-control py-4" id="inputFirstName" type="text"
-                                                        placeholder="Insira seu nome" /></div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group"><label class="small mb-1"
-                                                        for="inputLastName">Sobrenome</label><input
-                                                        class="form-control py-4" id="inputLastName" type="text"
-                                                        placeholder="Insira o seu sobrenome" /></div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group"><label class="small mb-1"
-                                                for="inputEmailAddress">Email</label><input class="form-control py-4"
-                                                id="inputEmailAddress" type="email" aria-describedby="emailHelp"
-                                                placeholder="Insira o endereço de email" /></div>
-                                        <div class="form-group"><label class="small mb-1"
-                                                for="inputCPFAddress">CPF</label><input class="form-control py-4"
-                                                id="inputCPFAddress" type="" aria-describedby="emailHelp"
-                                                placeholder="Insira o CPF" /></div>
+	<div layout:fragment="body">
 
-                                        <div class="form-group"><label class="small mb-1"
-                                                for="inputCPFAddress">Data de Nascimento</label><input class="form-control py-4"
-                                                id="inputCPFAddress" type="date" aria-describedby="emailHelp"
-                                                placeholder="Insira a Data de Nascimento" /></div>
-                                        <div class="form-row">
-                                            <div class="col-md-6">
-                                                <div class="form-group"><label class="small mb-1"
-                                                        for="inputPassword">Senha</label><input
-                                                        class="form-control py-4" id="inputPassword" type="password"
-                                                        placeholder="Insira a senha" /></div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group"><label class="small mb-1"
-                                                        for="inputConfirmPassword">Confirme a senha</label><input
-                                                        class="form-control py-4" id="inputConfirmPassword"
-                                                        type="password" placeholder="Confirme a senha" /></div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block"
-                                                href="login.html">Criar a conta</a></div>
-                                    </form>
-                                </div>
-                                <div class="card-footer text-center">
-                                    <div class="small"><a href="register.html">Já possui uma conta? Faça o login</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-        <div id="layoutAuthentication_footer">
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; GamersBank - 2021</div>
-                        <div>
-                            <a href="#">Política de privacidade</a>
-                            &middot;
-                            <a href="#">Termos &amp; Condições</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-7">
+					<div class="card shadow-lg border-0 rounded-lg mt-5">
+						<div class="card-header">
+							<h3 class="text-center font-weight-light my-4">Crie sua
+								conta</h3>
+						</div>
+						<div class="card-body">
+							<form th:action="@{/conta/create-user}" method="POST"
+								th:object="${conta}">
+								<div class="form-row">
+									<div class="col-md-12"></div>
 
-    <script src="../resources/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../resources/js/scripts.js"></script>
+								</div>
+
+								<div class="form-group">
+									<label class="small mb-1" for="inputNome">Nome</label><input
+										required="required" class="form-control py-4" id="inputNome"
+										type="text" placeholder="Insira seu nome"
+										th:field="${conta.nome}" />
+								</div>
+								<div class="form-group">
+									<label class="small mb-1" for="inputEmailAddress">Email</label><input
+										class="form-control py-4" id="inputEmailAddress" type="email"
+										aria-describedby="emailHelp"
+										placeholder="Insira o endereço de email"
+										th:field="${conta.email}" />
+								</div>
+
+
+								<div class="form-group">
+									<label class="small mb-1" for="inputCPFAddress">CPF</label><input
+										class="form-control py-4" id="inputCPFAddress" type="text"
+										aria-describedby="emailHelp" placeholder="Insira o CPF"
+										th:field="${conta.cpf}" />
+								</div>
+
+								<div class="form-group">
+									<label class="small mb-1" for="inputRenda">Renda</label><input
+										class="form-control py-4" id="inputRenda" type="number"
+										aria-describedby="emailHelp"
+										placeholder="Insira a Data de Nascimento"
+										th:field="${conta.renda}" />
+								</div>
+
+
+								<div class="form-group">
+									<label class="small mb-1" for="inputPassword">Senha</label><input
+										class="form-control py-4" id="inputPassword" type="password"
+										placeholder="Insira a senha" th:field="${conta.senha}" />
+								</div>
+
+
+								<div class="form-group mt-4 mb-0">
+									<button class="btn btn-primary btn-block botao" type="submit">Criar
+										a conta</button>
+								</div>
+							</form>
+						</div>
+						<div class="card-footer text-center">
+							<div class="small">
+								<a th:href="@{/conta/login}">Já possui uma conta? Faça o login</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+
+
+	<script src="../resources/js/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="../resources/js/scripts.js"></script>
 </body>
 
 </html>
